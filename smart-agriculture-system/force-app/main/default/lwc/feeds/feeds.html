@@ -1,0 +1,31 @@
+<template>
+    <div class="custom-border">
+        <lightning-layout>
+            <lightning-layout-item size="12">
+                <h1 class="head" style="text-align:center;">Share your feedback</h1>
+                <lightning-textarea name="comments" placeholder="Share your comments..." value={comments}
+                    onchange={handleCommentsChange} variant="standard" class="text-area"></lightning-textarea>
+                <lightning-input name="name" placeholder="Your name (optional)" value={name}
+                    onchange={handleNameChange} variant="standard" class="text-input"></lightning-input>
+                <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
+                    onclick={handleSubmitClick}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <lightning-layout>
+            <lightning-layout-item size="12">
+                <br>
+                <h2 class="head" style="text-align:center;">Past Feedback</h2>
+                <div class="feedback-container">
+                    <template for:each={feedbackData} for:item="feedback">
+                        <div key={feedback.Id} class="feedback-item">
+                            <p><strong>{feedback.Comments__c}</strong></p>
+                            <p style="text-align:right;">{feedback.Date__c}</p>
+                            <p>~{feedback.Names__c}</p>
+                        </div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

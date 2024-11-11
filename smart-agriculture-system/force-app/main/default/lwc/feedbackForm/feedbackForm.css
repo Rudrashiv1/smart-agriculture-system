@@ -1,0 +1,28 @@
+.slds-m-around_medium {
+    margin: 1rem;
+		
+}
+.feedback-entry {
+    border-bottom: 1px solid #d8dde6;
+    padding: 0.5rem 0;
+    background-color: #394449; /* grey background for feedback entries */
+    color: #f0f0f0; /* white text color */
+}
+.feedback-name {
+    margin-left: auto;
+    padding-left: 1rem;
+}
+lightning-card {
+    background-color: #f0f0f0; /* Light grey background for the card */
+    color: #000000; /* Black text color */
+}
+lightning-textarea {
+    background-color: #f0f0f0; /* Light grey background for input */
+    color: #000000; /* Black text color */
+    border: 1px solid #d8dde6; /* Darker grey border */
+}
+lightning-button {
+    background-color: #00ff00; /* Bright green background for the button */
+    color: #ffffff; /* White text color */
+    border: 1px solid #000000; /* Black border */
+}

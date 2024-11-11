@@ -1,0 +1,53 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+    height: 400px; /* Adjust height as needed */
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 1rem); /* Adjusts to 3 cards per row */
+    box-sizing: border-box;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    min-width: 220px;
+    background-color: #e0f7e0; /* Light blue background */
+		border-radius: 8px;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.imgs {
+    height: 160px;
+    width: 200px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.seed-name {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 8px;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    background-color: #0ae2b7;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+a:hover {
+    background-color: #45a049;
+}

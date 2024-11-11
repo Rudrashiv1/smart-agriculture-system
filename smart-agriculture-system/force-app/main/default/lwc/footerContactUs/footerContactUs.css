@@ -1,0 +1,50 @@
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-signup {
+    margin-bottom: 20px;
+}
+
+.footer-signup h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-signup p {
+    margin-bottom: 10px;
+}
+
+.footer-signup input {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.footer-signup button {
+    padding: 10px 20px;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.column {
+    width: 30%;
+}
+
+.column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.column p {
+    margin: 5px 0;
+}

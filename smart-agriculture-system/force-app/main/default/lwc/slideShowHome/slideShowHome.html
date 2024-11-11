@@ -1,0 +1,16 @@
+<template>
+    <div class="carousel-container">
+        <template for:each={images} for:item="image">
+            <div key={image.id} class={image.class} style={image.style} onclick={navigateToLink}>
+                <img src={image.url} alt={image.alt} />
+            </div>
+        </template>
+				<!--
+        <div class="carousel-controls">
+            <button onclick={previousImage}>⟨</button>
+            <button onclick={togglePlay}>{playButtonLabel}</button>
+            <button onclick={nextImage}>⟩</button>
+        </div>
+-->
+    </div>
+</template>

@@ -1,0 +1,32 @@
+<template>
+    <lightning-card icon-name="standard:agriculture">
+        <div class="slds-p-around_large slds-text-align_center">
+            <h4>Available Fertilizer</h4>
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning-input type="search" label="Search Fertilizer" onchange={handleSearch}></lightning-input>
+        </div>
+        <template if:true={manuers}>
+            <div class="card-container">
+                <template for:each={filteredManuers} for:item="manuer">
+                    <div key={manuer.Id} class="card">
+                        <div class="image-box">
+                            <img class="imgs" style="height: 160px; width:200px" src={manuer.Image_Url__c} alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2 class="manuer-name">{manuer.Name}</h2>
+                            <p>{manuer.Description__c}</p>
+                            <a href={manuer.More_Info__c} target="_blank">More Info</a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

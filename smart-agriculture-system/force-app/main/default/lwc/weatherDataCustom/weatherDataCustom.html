@@ -1,0 +1,28 @@
+<template>
+    <template if:true={locationAccess}>
+        <div class="slds-wrap">
+            <div class="slds-col slds-size_1-of-1">
+                <div class="weather-container">
+                    <h1 class="slds-text-heading_medium slds-align_absolute-center">Today's Weather</h1>
+                    <h2 class="slds-align_absolute-center">{date}</h2>
+                    <img src={weatherIcon} alt="Weather Icon">
+                    <b class="temp">{temp}°C</b>
+                    <p class="weather-text">{weatherText}</p>
+                    <p class="location">{name}, {region}, {country}</p>
+                </div>						
+            </div>
+            
+            <div class="slds-col slds-size_1-of-1 blue-border">
+                <h1 class="slds-text-heading_medium slds-align_absolute-center map" onclick={toggleMapVisibility}>Click here to find the nearest Agriculture shop in Map</h1>
+                <template if:true={isMapVisible}>
+                    <div>
+                        <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel} list-view={listView}></lightning-map>
+                    </div>
+                </template>
+            </div> 						
+        </div>
+    </template>
+    <template if:false={locationAccess}>
+        <p class="slds-align_absolute-center">Please allow location access to view the weather information.</p>
+    </template>
+</template>

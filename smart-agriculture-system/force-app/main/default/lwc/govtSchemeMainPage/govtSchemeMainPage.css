@@ -1,0 +1,63 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.carousel-content {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    justify-content: space-between;
+    width: 80%;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+.carousel-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #ccc;
+}
+
+.nav-button {
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.name {
+    display: flex;
+    text-align: center;
+}
+
+.bg-color-1 {
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.bg-color-2 {
+    background-color: #e6e6fa;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.schemeForYou {
+    align-items: center;
+    text-align: center;
+		border-radius: 8px;
+}
+
+.yourScheme {
+    background-color: #4CAF50;;
+    align-content: center;
+    color: white;
+		border-radius: 8px;
+}

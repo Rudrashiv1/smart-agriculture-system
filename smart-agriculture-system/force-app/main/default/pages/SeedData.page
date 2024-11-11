@@ -1,0 +1,13 @@
+<apex:page controller="SmartAgricultureFetchData">
+    <apex:stylesheet value="{!URLFOR($Resource.SeedDataCss)}"/>
+    <apex:pageBlock title="Seed Data">
+       <!-- <apex:repeat value="{!fetchSeedData1()}" var="seed"> 
+            <div class="card">
+                <h3>{!seed.Name}</h3>
+                <p>{!seed.Description__c}</p>
+                <img src="{!seed.Seed_Image__c}" alt="Seed Image"/>
+                <a href="{!seed.More_Info__c}" target="_blank">More Info</a>
+            </div>
+        </apex:repeat>  -->
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,253 @@
+<template>
+    <div class="container">
+        <!-- Language Selector -->
+								<div class="language-toggle">
+						      <input type="checkbox" id="languageSwitch" class="language-switch" onchange={handleLanguageChange}>
+						      <label for="languageSwitch" class="language-label">
+							   	<span class="language-text">English</span>
+							  	<span class="language-text">हिंदी</span>
+					       	</label>
+				       </div>
+
+        <!-- Bilingual Paragraph (Farming Knowledge) -->
+				<template if:true={isEnglish}>
+                <h1 class="main-heading">Agriculture</h1>
+            </template>
+				 <template if:true={isHindi}>
+                <h1 class="main-heading">कृषि </h1>
+            </template>
+				<template if:true={isEnglish}>
+                <p class="main-details">Farming and Climate Considerations: Understanding the relationship between farming and climate is crucial for successful crop production. Different crops thrive in different climatic conditions. For instance, rice requires a warm and humid climate, while wheat grows best in cooler, drier conditions. Farmers must consider temperature, rainfall, and frost dates when planning their crops. Implementing climate-smart practices, such as efficient water management and selecting drought-resistant varieties, can help mitigate the impacts of climate variability.
+Season-Wise Crop Planning: Season-wise crop planning involves selecting crops that are best suited for each season. In the summer, crops like maize, soybeans, and cotton are ideal due to their heat tolerance. During the monsoon season, paddy, sugarcane, and jute thrive in the abundant rainfall. In the winter, crops like wheat, barley, and mustard are preferred as they can withstand cooler temperatures. Proper planning ensures optimal use of resources and maximizes yield.</p>
+            </template>
+				<template if:true={isHindi}>
+                <p class="main-details">कृषि और जलवायु विचार: कृषि और जलवायु के बीच संबंध को समझना सफल फसल उत्पादन के लिए महत्वपूर्ण है। विभिन्न फसलें विभिन्न जलवायु परिस्थितियों में पनपती हैं। उदाहरण के लिए, चावल को गर्म और आर्द्र जलवायु की आवश्यकता होती है, जबकि गेहूं ठंडी और शुष्क परिस्थितियों में सबसे अच्छा बढ़ता है। किसानों को फसल योजना बनाते समय तापमान, वर्षा और ठंढ की तिथियों पर विचार करना चाहिए। जलवायु-स्मार्ट प्रथाओं को लागू करना, जैसे कि कुशल जल प्रबंधन और सूखा-प्रतिरोधी किस्मों का चयन, जलवायु परिवर्तनशीलता के प्रभावों को कम करने में मदद कर सकता है।
+मौसम-वार फसल योजना: मौसम-वार फसल योजना में प्रत्येक मौसम के लिए सबसे उपयुक्त फसलों का चयन करना शामिल है। गर्मियों में, मक्का, सोयाबीन और कपास जैसी फसलें उनकी गर्मी सहनशीलता के कारण आदर्श होती हैं। मानसून के मौसम में, धान, गन्ना और जूट प्रचुर वर्षा में पनपते हैं। सर्दियों में, गेहूं, जौ और सरसों जैसी फसलें ठंडे तापमान को सहन कर सकती हैं। उचित योजना संसाधनों का इष्टतम उपयोग सुनिश्चित करती है और उपज को अधिकतम करती है।</p>
+            </template>
+ 
+        <!-- Lightning Cards for Crop Selection to Harvesting -->	
+				<template if:true={isEnglish}>
+                <h1 class="main-heading">Agriculture complete process: Crop selection to Harvesting </h1>
+            </template>
+				 <template if:true={isHindi}>
+                <h1 class="main-heading">कृषि सम्पूर्ण प्रक्रिया: फसल चयन से कटाई तक</h1>
+            </template>
+				 <div class="card-container">
+						 
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+										<div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>1. Crop Selection</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>1. फसल चयन</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Crop selection is the first and most crucial step in farming. It involves choosing crops that are best suited to the local climate, soil type, and market demand. Selecting the right crop can lead to higher yields and better profitability. Farmers should consider factors such as crop rotation, pest resistance, and water requirements when making their choice.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                    फसल चयन कृषि का पहला और सबसे महत्वपूर्ण कदम है। इसमें स्थानीय जलवायु, मिट्टी के प्रकार और बाजार की मांग के अनुसार सबसे उपयुक्त फसलों का चयन करना शामिल है। सही फसल का चयन करने से उच्च उपज और बेहतर लाभप्रदता प्राप्त हो सकती है। किसानों को फसल चक्र, कीट प्रतिरोध और जल आवश्यकताओं जैसे कारकों पर विचार करना चाहिए।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+						<div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>2. Soil Preparation</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>2. मिट्टी की तैयारी</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Soil preparation is essential for creating a conducive environment for seed germination and plant growth. This process includes plowing, leveling, and adding organic matter to improve soil structure and fertility. Proper soil preparation ensures that the soil is well-aerated and has the right texture for root development.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                    मिट्टी की तैयारी बीज अंकुरण और पौधों की वृद्धि के लिए अनुकूल वातावरण बनाने के लिए आवश्यक है। इस प्रक्रिया में जुताई, समतल करना और मिट्टी की संरचना और उर्वरता में सुधार के लिए जैविक पदार्थ जोड़ना शामिल है। उचित मिट्टी की तैयारी सुनिश्चित करती है कि मिट्टी अच्छी तरह से हवादार हो और जड़ विकास के लिए सही बनावट हो।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+						 <div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>3. Seed Selection</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>3. बीज का चयन</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Selecting high-quality seeds is vital for achieving good crop yields. Farmers should choose seeds that are disease-resistant, have a high germination rate, and are suitable for the local climate. Certified seeds from reputable sources can significantly enhance crop performance and reduce the risk of crop failure.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                   अच्छी फसल उपज प्राप्त करने के लिए उच्च गुणवत्ता वाले बीजों का चयन महत्वपूर्ण है। किसानों को ऐसे बीजों का चयन करना चाहिए जो रोग प्रतिरोधी हों, उच्च अंकुरण दर वाले हों और स्थानीय जलवायु के लिए उपयुक्त हों। प्रतिष्ठित स्रोतों से प्रमाणित बीज फसल प्रदर्शन को काफी हद तक बढ़ा सकते हैं और फसल विफलता के जोखिम को कम कर सकते हैं।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+						<div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>4. Seed Sowing</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>4. बीज बोना</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Seed sowing is a critical step that involves planting seeds at the right depth and spacing. Proper sowing techniques, such as broadcasting, drilling, or transplanting, ensure optimal seed germination and plant growth. Farmers should follow recommended practices to achieve uniform crop stands and maximize yield.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                    बीज बोना एक महत्वपूर्ण कदम है जिसमें बीजों को सही गहराई और अंतराल पर बोना शामिल है। प्रसारण, ड्रिलिंग या रोपाई जैसी उचित बुवाई तकनीकें इष्टतम बीज अंकुरण और पौधों की वृद्धि सुनिश्चित करती हैं। किसानों को समान फसल खड़ी करने और उपज को अधिकतम करने के लिए अनुशंसित प्रथाओं का पालन करना चाहिए।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+						<div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>5. Irrigation</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>5. सिंचाई</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Irrigation is essential for providing crops with the necessary water for growth. Efficient irrigation methods, such as drip or sprinkler systems, help conserve water and ensure that crops receive adequate moisture. Monitoring soil moisture levels and adjusting irrigation schedules based on crop needs can improve water use efficiency.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                    सिंचाई फसलों को वृद्धि के लिए आवश्यक पानी प्रदान करने के लिए आवश्यक है। ड्रिप या स्प्रिंकलर सिस्टम जैसी कुशल सिंचाई विधियाँ पानी की बचत करने और यह सुनिश्चित करने में मदद करती हैं कि फसलों को पर्याप्त नमी मिले। मिट्टी की नमी के स्तर की निगरानी करना और फसल की आवश्यकताओं के आधार पर सिंचाई कार्यक्रमों को समायोजित करना पानी के उपयोग की दक्षता में सुधार कर सकता है।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+						<div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>6. Fertilizers and Manures</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>6. उर्वरकों और जैविक खाद</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Applying the right amount of fertilizers and organic manures is crucial for supplying essential nutrients to crops. Farmers should follow soil test recommendations to ensure balanced fertilization. Using organic manures, such as compost or green manure, can improve soil health and fertility over time.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                    फसलों को आवश्यक पोषक तत्व प्रदान करने के लिए सही मात्रा में उर्वरकों और जैविक खादों का उपयोग करना महत्वपूर्ण है। किसानों को संतुलित उर्वरीकरण सुनिश्चित करने के लिए मिट्टी परीक्षण की सिफारिशों का पालन करना चाहिए। जैविक खादों, जैसे कि कंपोस्ट या हरी खाद का उपयोग करने से समय के साथ मिट्टी के स्वास्थ्य और उर्वरता में सुधार हो सकता है।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+				<lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="horizontal-small">
+						<div class="card">
+        <div class="card-header">
+            <template if:true={isEnglish}>
+                <h2>7. Harvesting</h2>
+            </template>
+            <template if:true={isHindi}>
+                <h2>7. फसल की कटाई</h2>
+            </template>
+        </div>
+        <div class="card-body">
+            <template if:true={isEnglish}>
+                <p>
+                    Harvesting crops at the right maturity stage is essential for maximizing yield and quality. Farmers should use proper harvesting techniques to minimize crop damage and post-harvest losses. Timely harvesting ensures that crops are collected at their peak nutritional value and market readiness.
+                </p>
+            </template>
+            <template if:true={isHindi}>
+                <p>
+                     उपज और गुणवत्ता को अधिकतम करने के लिए फसलों को सही परिपक्वता चरण में काटना आवश्यक है। किसानों को फसल क्षति और कटाई के बाद के नुकसान को कम करने के लिए उचित कटाई तकनीकों का उपयोग करना चाहिए। समय पर कटाई यह सुनिश्चित करती है कि फसलें अपने उच्चतम पोषण मूल्य और बाजार की तैयारी पर एकत्र की जाएं।
+                </p>
+            </template>
+        </div>
+    </div>
+				</lightning-layout-item>
+				
+
+				</div>
+						 
+ 
+        <!-- Video Section -->
+				<template if:true={isEnglish}>
+                <h1 class="main-heading">Agriculture Learning Videos</h1>
+            </template>
+				 <template if:true={isHindi}>
+                <h1 class="main-heading">कृषि सीखने के वीडियो</h1>
+            </template>
+        <div class="video-grid">
+            <div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/VqO4QNzpopo?si=VSEz2M1xrDMOw2fx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/EzYQYIP8TIQ?si=h_gx912bWSbsyUeu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/lI5StP_DtYM?si=pAsCUWHTOL3Z157S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/iH8V9tpdPYg?si=kww0V9s3LzvHHoqx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/rBJg4vO2HNM?si=k63T3GtHE8lyYxmq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/GdayRt65_n8?si=M9X7oimiR8tFmSt3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/r4buaID5Y_c?si=0wlYoUu2tsFDeXFX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/8j_OKwjHIDo?si=CLtyDEcaIbGBBXcB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+						<div class="video-item">
+								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/8GqppO-8puw?si=JokM--RTBGr5ymgZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</template>

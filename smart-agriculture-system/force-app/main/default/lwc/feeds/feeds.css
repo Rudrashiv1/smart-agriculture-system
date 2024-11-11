@@ -1,0 +1,23 @@
+.feedback-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.text-area, .text-input {
+    margin-bottom: 10px;
+}
+.custom-border{
+		border: 1px solid black;
+    padding: 10px;
+}
+.head{
+		text-align: center;
+    font-size: 1.5em;
+		margin-bottom: 0.5em;
+		background-color:#394449;
+		color: white;
+		border-radius: 8px;
+}
+.feedback-container {
+    max-height: 245px; /* Adjust the height as needed */
+    overflow-x: auto;
+}

@@ -1,0 +1,57 @@
+<template>
+    <lightning-card title="Feedback">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Name(Optional)" value={name} onchange={handleNameChange}></lightning-input>
+            <lightning-textarea label="Comment" value={comment} onchange={handleCommentChange}></lightning-textarea>
+            <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+            <template if:true={errorMessage}>
+                <p class="slds-text-color_error">{errorMessage}</p>
+            </template>
+        </div>
+        <template if:true={feedbacks.length}>
+            <div class="slds-m-around_medium">
+                <h3>Feedback & reviews:</h3>
+                <template for:each={feedbacks} for:item="feedback">
+                    <div key={feedback.Id} class="feedback-entry">
+                        <p><strong>{feedback.Comments__c}</strong></p>
+                        <p style="text-align:right;">{feedback.Date__c}</p>
+                        <p class="feedback-name">{feedback.Names__c}</p>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>
+
+<!-- 
+<template>
+       <lightning-card title="Share you experience on Samrt Agriculture " align= center>
+           <div class="slds-p-around_medium">
+               <lightning-input label="Name" value={name} onchange={handleInputChange} data-id="name"></lightning-input>
+               <lightning-input label="Email(optional)" value={email} onchange={handleInputChange} data-id="email"></lightning-input>
+               <lightning-textarea label="Comments" value={comments} onchange={handleInputChange} data-id="comments"></lightning-textarea>
+               <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+           </div>
+       </lightning-card>
+   </template>
+
+<template>
+    <lightning-card title="Share you experience on Samrt Agriculture">
+        <div class="slds-m-around_medium">
+            <lightning-textarea label="Share your insights..." value={feedback} onchange={handleFeedbackChange}></lightning-textarea>
+            <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+        <template if:true={feedbackList.length}>
+            <div class="slds-m-around_medium">
+                <h3>Feedback & reviews:</h3>
+                <template for:each={feedbackList} for:item="feedback">
+                    <div key={feedback.id} class="feedback-entry">
+                        <p><strong>{feedback.text}</strong></p>
+                        <p>{feedback.date}</p>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>
+-->

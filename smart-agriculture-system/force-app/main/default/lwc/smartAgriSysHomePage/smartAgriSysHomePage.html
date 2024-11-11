@@ -1,0 +1,40 @@
+<template>
+    <lightning-tabset variant="vertical" active-tab-value="seeds">
+    <!-- Seeds Tab -->
+    <lightning-tab label="Seeds" value="seeds">
+    <div class="tab-content">
+    <lightning-card title="Seeds Information">
+    <p>Information about different seeds will be displayed here.</p>
+    </lightning-card>
+    </div>
+    </lightning-tab>
+     
+            <!-- Fertilizer Tab -->
+    <lightning-tab label="Fertilizer" value="fertilizer">
+    <div class="tab-content">
+    <lightning-card title="Fertilizer Information">
+    <p>Details about fertilizers will be shown here.</p>
+    </lightning-card>
+    </div>
+    </lightning-tab>
+     
+            <!-- Government Schemes Tab -->
+    <lightning-tab label="Government Schemes" value="govt-schemes">
+    <div class="tab-content">
+    <lightning-card title="Government Schemes">
+    <p>Government schemes related to agriculture will be shown here.</p>
+    </lightning-card>
+    </div>
+    </lightning-tab>
+     
+            <!-- Feedback Tab -->
+    <lightning-tab label="Feedback" value="feedback">
+    <div class="tab-content">
+    <lightning-card title="Feedback">
+    <lightning-textarea label="Provide your feedback" name="feedback" onchange={handleFeedbackChange}></lightning-textarea>
+    <lightning-button label="Submit" onclick={submitFeedback} class="submit-button"></lightning-button>
+    </lightning-card>
+    </div>
+    </lightning-tab>
+    </lightning-tabset>
+    </template>

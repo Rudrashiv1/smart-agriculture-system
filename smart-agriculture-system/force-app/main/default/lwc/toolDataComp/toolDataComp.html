@@ -1,0 +1,32 @@
+<template>
+    <lightning-card icon-name="standard:tools">
+        <div class="slds-p-around_large slds-text-align_center">
+            <h4>Available Tools</h4>
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning-input type="search" label="Search Tools" onchange={handleSearch}></lightning-input>
+        </div>
+        <template if:true={tools}>
+            <div class="card-container">
+                <template for:each={filteredTools} for:item="tool">
+                    <div key={tool.Id} class="card">
+                        <div class="image-box">
+                            <img class="imgs" style="height: 160px; width:200px" src={tool.Image_Url__c} alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2 class="tool-name">{tool.Name}</h2>
+                            <p>{tool.Description__c}</p>
+                            <a href={tool.More_Info__c} target="_blank">More Info</a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

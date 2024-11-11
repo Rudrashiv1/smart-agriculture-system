@@ -1,0 +1,85 @@
+<template>
+    <!-- Language Selector -->
+    <div class="language-toggle">
+        <input type="checkbox" id="languageSwitch" class="language-switch" onchange={handleLanguageChange}>
+        <label for="languageSwitch" class="language-label">
+            <span class="language-text">English</span>
+            <span class="language-text">हिंदी</span>
+        </label>
+    </div>
+
+    <div class="custom-border">
+        <template if:true={isEnglish}>
+            <h1 class="slds-text-heading_medium slds-align_absolute-center plant">PLANT AND DISEASE DATA</h1>
+        </template>
+        <template if:true={isHindi}>
+            <h1 class="slds-text-heading_medium slds-align_absolute-center plant">पौधे और रोग डेटा</h1>
+        </template>
+        <div class="slds-p-around_medium" style="text-align: center;">
+            <div class="button-container">
+                <template if:true={isEnglish}>
+                    <button class="tab-button" onclick={showPlants}>Plant Species</button>
+                    <button class="tab-button" onclick={showDiseases}>Pest & Diseases</button>
+                </template>
+                <template if:true={isHindi}>
+                    <button class="tab-button" onclick={showPlants}>पौधों की प्रजातियाँ</button>
+                    <button class="tab-button" onclick={showDiseases}>कीट और रोग</button>
+                </template>
+            </div>
+            <lightning-input type="search" label={searchLabel} onchange={handleSearch} class="search-box"></lightning-input>
+            <template if:true={showPlantTab}>
+                <div class="plant-container slds-grid slds-wrap">
+                    <template if:true={filteredPlantData.length}>
+                        <template class="card" for:each={filteredPlantData} for:item="plant">
+                            <div key={plant.id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
+                                <div class="slds-card equal-height">
+                                    <template if:true={plant.default_image.thumbnail}>
+                                        <img src={plant.default_image.thumbnail} alt={plant.common_name} class="slds-m-bottom_small"/>
+                                    </template>
+                                    <template if:false={plant.default_image.thumbnail}>
+                                        <img src="https://via.placeholder.com/150" alt="No Image Available" class="slds-m-bottom_small"/>
+                                    </template>
+                                    <p><strong>{commonNameLabel}</strong> {plant.common_name}</p>
+                                    <p><strong>{scientificNameLabel}</strong> {plant.scientific_name}</p>
+                                    <p><strong>{otherNamesLabel}</strong> {plant.other_name}</p>
+                                    <p><strong>{cycleLabel}</strong> {plant.cycle}</p>
+                                    <p><strong>{wateringLabel}</strong> {plant.watering}</p>
+                                    <p><strong>{sunlightLabel}</strong> {plant.sunlight}</p>
+                                </div>                                
+                            </div>
+                        </template>
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning-button label={viewMoreLabel} onclick={loadMorePlants} if:true={hasMorePlants} class="view-more-button"></lightning-button>
+                        </div>
+                    </template>
+                    <template if:true={error}>
+                        <p class="slds-text-color_error">{error}</p>
+                    </template>
+                </div>
+            </template>
+            <template if:true={showDiseaseTab}>
+                <div class="disease-container">
+                    <template if:true={filteredDiseaseData.length}>
+                        <template for:each={filteredDiseaseData} for:item="disease">
+                            <div key={disease.id} class="slds-box slds-m-bottom_small disease-card">
+                                <template for:each={disease.images} for:item="image">
+                                    <img key={image.thumbnail} src={image.thumbnail} alt={disease.common_name} class="slds-m-bottom_small"/>
+                                </template>
+                                <p><strong>{commonNameLabel}</strong> {disease.common_name}</p>
+                                <p><strong>{scientificNameLabel}</strong> {disease.scientific_name}</p>
+                                <p><strong>{descriptionLabel}</strong> {disease.description}</p>
+                                <p><strong>{solutionLabel}</strong> {disease.solution}</p>
+                            </div>
+                        </template>
+                        <div class="slds-align_absolute-center slds-m-top_medium">
+                            <lightning-button label={viewMoreLabel} onclick={loadMoreDiseases} if:true={hasMoreDiseases} class="view-more-button"></lightning-button>
+                        </div>
+                    </template>
+                    <template if:true={error}>
+                        <p class="slds-text-color_error">{error}</p>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

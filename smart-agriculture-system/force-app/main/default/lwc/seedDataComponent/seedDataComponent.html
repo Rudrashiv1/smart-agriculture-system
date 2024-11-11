@@ -1,0 +1,32 @@
+<template>
+    <lightning-card icon-name="standard:agriculture">
+        <div class="slds-p-around_large slds-text-align_center">
+            <h4>Available Seeds</h4>
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning-input type="search" label="Search Seeds" onchange={handleSearch}></lightning-input>
+        </div>
+        <template if:true={seeds}>
+            <div class="card-container">
+                <template for:each={filteredSeeds} for:item="seed">
+                    <div key={seed.Id} class="card">
+                        <div class="image-box">
+                            <img class="imgs" style="height: 160px; width:200px" src={seed.Image_Url__c} alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2 class="seed-name">{seed.Name}</h2>
+                            <p>{seed.Description__c}</p>
+                            <a href={seed.More_Info__c} target="_blank">More Info</a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
+        <template if:true={loading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

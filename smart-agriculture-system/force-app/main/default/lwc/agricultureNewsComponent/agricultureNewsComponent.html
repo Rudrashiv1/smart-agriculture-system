@@ -1,0 +1,15 @@
+<template>
+    <div class="custom-border">
+        <h1 class="slds-text-heading_medium slds-align_absolute-center head">Agriculture News Highlights</h1>
+        <div class="news-container">
+            <template if:true={newsArticles}>
+                <template for:each={newsArticles} for:item="article">
+                    <div key={article.title} class="slds-box slds-m-around_small news-item">
+                        <h3>{article.title}</h3>
+                        <p>{article.description}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

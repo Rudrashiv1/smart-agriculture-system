@@ -1,0 +1,59 @@
+<template>
+    <!-- Language Selector -->
+    <div class="language-toggle">
+        <input type="checkbox" id="languageSwitch" class="language-switch" onchange={handleLanguageChange}>
+        <label for="languageSwitch" class="language-label">
+            <span class="language-text">English</span>
+            <span class="language-text">हिंदी</span>
+        </label>
+    </div>
+
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2 equal-height">
+            <img src="/sfsites/c/resource/feedbackimg" alt="Feedback Image" class="feedback-image">            
+        </div>
+        <div class="slds-col slds-size_1-of-2 equal-height">
+            <div class="custom-border">
+                <lightning-layout>
+                    <lightning-layout-item size="12">
+                        <template if:true={isEnglish}>
+                            <h1 class="main-heading"><u>Share your Feedback/Suggestions</u></h1>
+                            <lightning-textarea name="comments" placeholder="Share your comments..." value={comments}
+                                onchange={handleCommentsChange} variant="standard" class="text-area"></lightning-textarea>
+                            <lightning-input name="name" placeholder="Your name (optional)" value={name}
+                                onchange={handleNameChange} variant="standard" class="text-input"></lightning-input>
+                            <lightning-button style="display: flex;justify-content:center" variant="brand" label="Submit"
+                                onclick={handleSubmitClick}></lightning-button>
+                        </template>
+                        <template if:true={isHindi}>
+                            <h1 class="main-heading"><u>अपनी प्रतिक्रिया/सुझाव साझा करें</u></h1>
+                            <lightning-textarea name="comments" placeholder="अपनी टिप्पणियाँ साझा करें..." value={comments}
+                                onchange={handleCommentsChange} variant="standard" class="text-area"></lightning-textarea>
+                            <lightning-input name="name" placeholder="आपका नाम (वैकल्पिक)" value={name}
+                                onchange={handleNameChange} variant="standard" class="text-input"></lightning-input>
+                            <lightning-button style="display: flex;justify-content:center" variant="brand" label="प्रस्तुत करें"
+                                onclick={handleSubmitClick}></lightning-button>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <lightning-layout>
+                    <lightning-layout-item size="12">
+                        <br>
+                        <h2 class="main-heading" style="text-align:center;" if:true={isEnglish}><u>Past Feedback</u></h2>
+												<h2 class="main-heading" style="text-align:center;" if:true={isHindi}><u>पिछली प्रतिक्रिया</u></h2>
+                        <div class="feedback-container">
+                            <template for:each={feedbackData} for:item="feedback">
+                                <div key={feedback.Id} class="feedback-item">
+                                    <p><strong>{feedback.Comments__c}</strong></p>
+                                    <p style="text-align:right;">{feedback.Date__c}</p>
+                                    <p>~{feedback.Names__c}</p>
+                                </div>
+                            </template>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+    </div>
+</template>

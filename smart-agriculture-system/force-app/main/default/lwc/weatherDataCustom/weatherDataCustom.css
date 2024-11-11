@@ -1,0 +1,53 @@
+.lightning-button {
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0f7e0;
+    color: #004d00;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.weather-container h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.weather-container img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1em;
+}
+
+.weather-text {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.location {
+    font-size: 1.2em;
+}
+
+.temp {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.black-border {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.map {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    background-color: #394449;
+    color: white;
+}

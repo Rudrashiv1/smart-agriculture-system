@@ -1,0 +1,12 @@
+cssCopy code.tab-content {
+    padding: 20px;
+}
+.submit-button {
+    margin-top: 10px;
+}
+.lightning-tabset {
+    --slds-c-tab-bar-color-background: #f3f2f2;
+}
+.lightning-card {
+    margin-bottom: 20px;
+}

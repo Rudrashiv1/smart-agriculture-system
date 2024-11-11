@@ -1,0 +1,29 @@
+<template>
+    <div class="head" style="font-size: 30px;">
+       <ul>
+					 <b> <marquee behavior="alternate"> Government Schemes </marquee></b>					 
+				</ul>
+    </div>
+
+    <div class="carousel-container">
+        <button class="nav-button left" onclick={handlePrevious}>⮜</button>
+
+        <div class="carousel-content">
+            <template for:each={displayedImages} for:item="image">
+                <div key={image.name} class={image.backgroundClass}>
+                    <a href={image.link} target="_blank">
+                        <img src={image.url} alt={image.name} class="carousel-image" />
+                    </a>
+                    <h1 class="name">{image.name}</h1>
+                </div>
+            </template>
+        </div>
+
+        <button class="nav-button right" onclick={handleNext}>⮞</button>
+    </div>
+
+    <br><br>
+    <div class="schemeForYou" style="font-size: 30px;">
+        <button class="yourScheme" onclick={findYourScheme}>Find Scheme For You ➡️</button>
+    </div>
+</template>

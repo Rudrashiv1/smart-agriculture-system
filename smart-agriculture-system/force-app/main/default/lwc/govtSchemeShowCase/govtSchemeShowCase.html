@@ -1,0 +1,34 @@
+<template>
+		<div class="head" style="font-size: 30px;">
+							<marquee behavior="alternate" class="head" >Government Schemes</marquee>	
+				</div>
+		
+    <div class="carousel-container">
+				<button class="nav-button left" onclick={handlePrevious}>⮜</button>
+        <!--<lightning-button-icon icon-name="utility:left" alternative-text="Previous" class="nav-button left" onclick={handlePrevious}></lightning-button-icon> -->
+ 
+        <div class="carousel-content">
+            <template for:each={displayedImages} for:item="image">
+								<div  key= {image.name} class={image.backgrroundClass}>
+										<a href={image.link} target="_blank">
+										<img src={image.url} alt={image.name} class="carousel-image" />
+										</a>
+										<h1 class="name">
+												{image.name}						
+										</h1>
+								</div>
+            </template>
+        </div>
+				
+				<button class="nav-button right" onclick={handleNext}>⮞</button>
+ 
+       <!-- <lightning-button-icon icon-name="utility:right" alternative-text="Next" class="nav-button right" onclick={handleNext}></lightning-button-icon> -->
+    </div>
+		
+		<!--  For Button-->
+		<br>
+		<br>
+		<div class="schemeForYou" style="font-size: 30px;">				
+						<button class="yourScheme" onclick={findYourScheme}>All Schemes</button>			
+		</div>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h3>🤖Agri-Man</h3>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type your message..." onkeyup={handleKeyUp} />
+            <button onclick={sendMessage}>Send</button>
+        </div>
+    </div>
+</template>

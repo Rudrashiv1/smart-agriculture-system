@@ -1,0 +1,36 @@
+<template>
+    <!-- Language Selector
+    <div class="language-toggle">
+        <input type="checkbox" id="languageSwitch" class="language-switch" onchange={handleLanguageChange}>
+        <label for="languageSwitch" class="language-label">
+            <span class="language-text">English</span>
+            <span class="language-text">हिंदी</span>
+        </label>
+    </div> 
+      -->
+
+
+    <div class="custom-border">
+        <div class="slds-p-around_large slds-text-align_center">
+            <h4 class="head">CONTACT CUSTOMER SUPPORT</h4>
+            <b><p>TELL US HOW WE CAN HELP.</p></b>    
+        </div>
+        <div class="slds-p-around_medium slds-text-align_center">
+            <div class="slds-p-around_medium slds-text-align_left">
+                <lightning-input label="Subject" value={subject} onchange={handleInputChange} data-id="subject"></lightning-input>
+            </div>
+            <div class="slds-p-around_medium slds-text-align_left">
+                <lightning-textarea label="Description" value={description} onchange={handleInputChange} data-id="description"></lightning-textarea>
+            </div>
+            <div class="slds-p-around_medium slds-text-align_left">
+                <lightning-input label="Email" value={email} onchange={handleInputChange} data-id="email"></lightning-input>
+            </div>
+            <div class="slds-p-around_medium slds-text-align_left">
+                <lightning-file-upload label="Add Attachment" onchange={handleFileChange}></lightning-file-upload>
+            </div>
+            <div class="slds-m-bottom_medium">
+                <lightning-button label="Submit" class="submit-button" style="display: flex;justify-content:center" variant="brand" onclick={handleSubmit}></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

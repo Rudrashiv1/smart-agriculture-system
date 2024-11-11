@@ -1,0 +1,21 @@
+<template>
+		<div class="custom-border">	
+				<h1 class="slds-text-heading_medium slds-align_absolute-center product">ALL PRODUCTS</h1>
+								<lightning-card>
+										<div class="button-container">
+												<button class="tab-button" data-id="tools" onclick={handleTabClick}>Tools</button>
+												<button class="tab-button" data-id="seeds" onclick={handleTabClick}>Seeds</button>
+												<button class="tab-button" data-id="manure" onclick={handleTabClick}>Fertilizer</button>
+										</div>
+										<template if:true={showTools}>
+												<c-tool-data-comp></c-tool-data-comp>
+										</template>
+										<template if:true={showSeeds}>
+												<c-seed-data-component></c-seed-data-component>
+										</template>
+										<template if:true={showManure}>
+												<c-fertilizer-data-comp></c-fertilizer-data-comp>
+										</template>
+								</lightning-card>
+					</div>
+</template>

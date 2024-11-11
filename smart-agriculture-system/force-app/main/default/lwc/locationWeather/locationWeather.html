@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Location and Weather">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Get Location" onclick={getLocation}></lightning-button>
+            <template if:true={locationAccess}>
+                <p>Latitude: {latitude}</p>
+                <p>Longitude: {longitude}</p>
+                <p>Weather: {weather}</p>
+								  <h1 >{result}</h1>
+								  <h1 >{result1}</h1>
+            </template>
+        </div>
+				<div>
+						<h1 >Current Weather</h1>
+            <h1 >{result}</h1>
+						<img class="slds-align_absolute-center" src={imageURL} alt="Weather Icon" />
+						
+						
+				</div>
+    </lightning-card>
+</template>

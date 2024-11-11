@@ -1,0 +1,148 @@
+.language-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.language-switch {
+    display: none;
+}
+
+.language-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 50px;
+    padding: 5px;
+    position: relative;
+    width: 100px;
+    height: 30px;
+    transition: background-color 0.3s;
+}
+
+.language-label::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.language-switch:checked + .language-label {
+    background-color: #4caf50;
+}
+
+.language-switch:checked + .language-label::before {
+    transform: translateX(70px);
+}
+
+.language-text {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+.feedback-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+.text-area, .text-input {
+    margin-bottom: 10px;
+}
+.custom-border{
+		border: 1px solid black;
+    padding: 10px;
+}
+.slds-p-around_medium {
+    background-color: #e6ffe6;
+    border-radius: 10px;
+}
+.slds-grid {
+    display: flex;
+    align-items: stretch;
+}
+
+.equal-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+		
+}
+
+.feedback-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.rating lightning-icon {
+    cursor: pointer;
+    margin-right: 5px;
+}
+.star.hover {
+    color: gold;
+}
+.star.selected {
+    color: gold;
+}
+
+.recommend lightning-icon {
+    cursor: pointer;
+    margin-right: 10px;
+}
+.thumb.hover {
+    color: green;
+}
+.thumb.selected {
+    color: green;
+}
+
+.slds-notify_toast {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+.submit-button {
+    background-color: green;
+    color: white;
+    font-size: 1.25rem; /* Larger font size */
+    padding: 0.75rem 1.5rem; /* Larger padding */
+    border-radius: 0.5rem; /* Rounded corners */
+		align-items: center;
+}
+.submit{
+		text-align: center;
+}
+.main-heading {
+    font-size: 36px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.main-heading {
+		animation: flicker 1s infinite;
+		color: #f4630f;
+		text-align: center;
+    font-size: 2em;
+}
+@keyframes flicker {
+		0% 
+		100% {
+				color: red;
+		}
+		50% {
+				color: black;
+		}
+}
+.feedback-container {
+    max-height: 375px; /* Adjust the height as needed */
+    overflow-x: auto;
+}

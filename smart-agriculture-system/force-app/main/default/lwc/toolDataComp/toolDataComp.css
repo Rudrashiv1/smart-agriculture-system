@@ -1,0 +1,63 @@
+.card-container {
+   display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: auto;
+    height: 500px;
+		border-radius: 8px;
+}
+
+.card {
+    border: 1px solid #dcdcdc;
+		flex: 1 1 calc(33.333% - 1rem); 
+    border-radius: 1px;
+    padding: 16px;
+    width: calc(33.333% - 32px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0f7e0; /* New background color */
+		border-radius: 8px;
+}
+
+.tool-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.image-box {
+		text-align: center;
+		padding-top: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+}
+.imgs {
+    height: 160px;
+    width: 200px;
+}
+
+
+.card-content {
+    padding: 8px 0;
+    text-align: center; /* Center the content */
+}
+
+.tool-name {
+    font-weight: bold;
+    font-size: 1.5em; /* Increase the font size */
+    margin-bottom: 8px;
+}
+
+a {
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
+    background-color: #4CAF50; /* Green background */
+    padding: 8px 16px; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the link behave like a button */
+    margin-top: 8px; /* Space above the link */
+}
+
+a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
